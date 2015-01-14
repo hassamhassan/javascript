@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button id="btn1" onclick="myFunction()"> try me !!!</button>
+
+</body>
+<script>
+id=1
+function myFunction(){
+document.getElementById("btn"+id).setAttribute("onclick","function_stop_propagation()");
+var button = document.createElement("button");
+var text = document.createTextNode("Click me");
+button.appendChild(text);
+document.body.appendChild(button);
+id+=1;
+document.body.lastChild.setAttribute("id","btn"+id);
+document.body.lastChild.setAttribute("onclick","myFunction()");
+}
+function function_stop_propagation()
+{
+}
+</script>
+
+</html>
